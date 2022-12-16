@@ -1,0 +1,219 @@
+/* Font */
+
+@font-face {
+    font-family: 'Fira Code';
+    src: url('/font/woff2/FiraCode-Light.woff2') format('woff2'),
+      url("/font/woff/FiraCode-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'Fira Code';
+    src: url('/font/woff2/FiraCode-Regular.woff2') format('woff2'),
+      url("/font/woff/FiraCode-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'Fira Code';
+    src: url('/font/woff2/FiraCode-Medium.woff2') format('woff2'),
+      url("/font/woff/FiraCode-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'Fira Code';
+    src: url('/font/woff2/FiraCode-SemiBold.woff2') format('woff2'),
+      url("/font/woff/FiraCode-SemiBold.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'Fira Code';
+    src: url('/font/woff2/FiraCode-Bold.woff2') format('woff2'),
+      url("/font/woff/FiraCode-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Global */
+
+:root{
+    --dark-blue: #07003a;
+    --neon-blue: #0fa7ff;
+    --halo-blue: #3c0fff;
+}
+
+body{
+    background-color: var(--dark-blue);
+    color: white;
+    font-family: 'Fira Code';
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: medium;
+}
+
+h1{
+    font-weight: 700;
+    font-size: x-large;
+    margin: 0;
+    padding: 0;
+}
+
+h2{
+    font-weight: 600;
+    font-size: larger;
+    margin: 0;
+    padding: 0;
+}
+
+h3{
+    font-weight: 500;
+    font-size: large;
+    margin: 0;
+    padding: 0;
+}
+
+hgroup span{
+    font-weight: 300;
+    font-size:small;
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+    color: var(--halo-blue);
+}
+
+hgroup{
+    margin: 3em auto;
+    width: fit-content;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+fieldset{
+    border-color: var(--neon-blue);
+    box-shadow: 0px 0px 15px var(--halo-blue), inset 0px 0px 15px var(--halo-blue);
+}
+
+legend{
+    color: var(--neon-blue);
+}
+
+/* Header */
+
+header hgroup{
+    margin: 5em auto;
+    border: 3px solid var(--neon-blue);
+    padding: 1em;
+    box-shadow: 0px 0px 15px var(--halo-blue), inset 0px 0px 15px var(--halo-blue);
+    transform: skew(-30deg);
+}
+
+header > hgroup > * {
+    transform: skew(30deg);
+}
+
+header > hgroup > div{
+    font-weight: 300;
+    font-size:small;
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+    color: var(--halo-blue);
+    margin-left: 1em;
+}
+
+/* Navbar */
+
+nav {
+    position: sticky;
+    top: -1px;
+    background: linear-gradient(var(--dark-blue), rgba(0,0,0,0))
+}
+
+nav > div{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav > div > *{
+    padding: 1em;
+    display: flex;
+    gap: 1em;
+}
+
+@media (width<740px) {
+
+    body{
+        display: grid;
+        grid-template-columns: 60px auto;
+    }
+
+    header, footer{
+        grid-column: span 2;
+    }
+
+    nav{
+        position: relative;
+    }
+
+    nav > div{
+        position: sticky;
+        display: flex;
+        top:0;
+        flex-direction: column;
+    }
+
+}
+
+/* Main */
+
+main{
+    padding: 5%;
+    padding-top: 0;
+}
+
+section hgroup{
+    margin-left: 5%;
+}
+
+/* Card */
+
+#card{
+    display: grid;
+    grid-template-columns: 270px auto;
+}
+
+#logo{
+    object-fit: cover;
+    width: 100%;
+}
+
+@media (width<600px) {
+
+    #card{
+        display: block;
+    }
+}
+
+/* Footer */
+
+footer{
+    padding: 5%;
+    padding-top: 0;
+}
+
+#here{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+}
