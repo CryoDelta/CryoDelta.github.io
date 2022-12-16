@@ -235,6 +235,17 @@
 </body>
 <script>
     let nodesDetails = document.getElementsByClassName("detail");
+    if(window.innerWidth<740){
+        for (let i = 0; i < nodesDetails.length; i++) {
+            nodesDetails[i].style.display="none";
+            nodesDetails[i].parentNode.childNodes[0].style.fontSize="30px";
+        }
+    } else {
+        for (let i = 0; i < nodesDetails.length; i++) {
+            nodesDetails[i].style.display="block";
+            nodesDetails[i].parentNode.childNodes[0].style.fontSize="medium";
+        }
+    }
     window.addEventListener("resize",event=>{
         if(window.innerWidth<740){
             for (let i = 0; i < nodesDetails.length; i++) {
