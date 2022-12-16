@@ -68,9 +68,13 @@
                 <h3><i class="fa-solid fa-heart"></i> What I love!</h3>
                 <span>And why I love it.</span>
             </hgroup>
-            <fieldset>
+            <fieldset id="slideshow">
                 <legend>Categories/</legend>
-                <fieldset>
+                <div id="buttons">
+                    <span><i class="fa-solid fa-caret-left"></i> Left/ <i class="fa-solid fa-caret-left"></i></span>
+                    <span><i class="fa-solid fa-caret-right"></i> Right/ <i class="fa-solid fa-caret-right"></i></span>
+                </div>
+                <fieldset id="headline">
                     <legend>People/</legend>
                     My Friends
                     <p>
@@ -234,6 +238,7 @@
     </footer>
 </body>
 <script>
+    // Navbar
     let nodesDetails = document.getElementsByClassName("detail");
     if(window.innerWidth<740){
         for (let i = 0; i < nodesDetails.length; i++) {
@@ -246,6 +251,42 @@
             nodesDetails[i].parentNode.childNodes[0].style.fontSize="medium";
         }
     }
+
+    // SlideShow
+    let active=0;
+    const nodeSlideShow=document.getElementById("slideshow");
+    const nodesSlide=nodeSlideShow.children;
+    for (let i = 0; i < nodesSlide.length; i++) {
+        if (i>1) {
+            nodesSlide[i].style.width=nodeSlideShow.clientWidth-56+"px";
+        }
+    }
+    nodeSlideShow.style.height=nodesSlide[active+2].clientHeight+50+"px";
+
+    const nodeButtons = document.getElementById("buttons")
+    const nodesButton = nodeButtons.children;
+    nodesButton[0].addEventListener("click",event=>{
+        if (active-1!=-1){
+            nodesSlide[active+2].style.opacity="0";
+            nodesSlide[active+2].style.transform="translateX(200%)";
+            active--;
+            nodesSlide[active+2].style.opacity="1";
+            nodesSlide[active+2].style.transform="translateX(0%)";
+            nodeSlideShow.style.height=nodesSlide[active+2].clientHeight+50+"px";
+        }
+    })
+    nodesButton[1].addEventListener("click",event=>{
+        if (active+1!=7){
+            nodesSlide[active+2].style.opacity="0";
+            nodesSlide[active+2].style.transform="translateX(-200%)";
+            active++;
+            nodesSlide[active+2].style.opacity="1";
+            nodesSlide[active+2].style.transform="translateX(0%)";
+            nodeSlideShow.style.height=nodesSlide[active+2].clientHeight+50+"px";
+        }
+    })
+
+    // Actualisation
     window.addEventListener("resize",event=>{
         if(window.innerWidth<740){
             for (let i = 0; i < nodesDetails.length; i++) {
@@ -258,7 +299,12 @@
                 nodesDetails[i].parentNode.childNodes[0].style.fontSize="medium";
             }
         }
+        for (let i = 0; i < nodesSlide.length; i++) {
+            if (i>1) {
+                nodesSlide[i].style.width=nodeSlideShow.clientWidth-56+"px";
+            }
+        }
+        nodeSlideShow.style.height=nodesSlide[active+2].clientHeight+50+"px";
     })
-
 </script>
 </html>
