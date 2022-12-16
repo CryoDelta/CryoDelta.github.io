@@ -185,6 +185,10 @@ section hgroup{
     margin-left: 5%;
 }
 
+section p{
+    margin-bottom: 0;
+}
+
 /* Card */
 
 #card{
