@@ -71,8 +71,9 @@
             <fieldset id="slideshow">
                 <legend>Categories/</legend>
                 <div id="buttons">
-                    <span><i class="fa-solid fa-caret-left"></i> Left/ <i class="fa-solid fa-caret-left"></i></span>
-                    <span><i class="fa-solid fa-caret-right"></i> Right/ <i class="fa-solid fa-caret-right"></i></span>
+                    <span><i class="fa-solid fa-caret-left"></i> Previous/ <i class="fa-solid fa-caret-left"></i></span>
+                    <span>1/7</span>
+                    <span><i class="fa-solid fa-caret-right"></i> Next/ <i class="fa-solid fa-caret-right"></i></span>
                 </div>
                 <fieldset id="headline">
                     <legend>People/</legend>
@@ -270,16 +271,18 @@
             nodesSlide[active+2].style.opacity="0";
             nodesSlide[active+2].style.transform="translateX(200%)";
             active--;
+            nodesButton[1].textContent=active+1+"/7"
             nodesSlide[active+2].style.opacity="1";
             nodesSlide[active+2].style.transform="translateX(0%)";
             nodeSlideShow.style.height=nodesSlide[active+2].clientHeight+50+"px";
         }
     })
-    nodesButton[1].addEventListener("click",event=>{
+    nodesButton[2].addEventListener("click",event=>{
         if (active+1!=7){
             nodesSlide[active+2].style.opacity="0";
             nodesSlide[active+2].style.transform="translateX(-200%)";
             active++;
+            nodesButton[1].textContent=active+1+"/7"
             nodesSlide[active+2].style.opacity="1";
             nodesSlide[active+2].style.transform="translateX(0%)";
             nodeSlideShow.style.height=nodesSlide[active+2].clientHeight+50+"px";
