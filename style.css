@@ -107,8 +107,15 @@ hgroup span{
 }
 
 hgroup{
-    margin: 3em auto;
+    margin: 1em 0;
     width: fit-content;
+    padding: 2em 0;
+    padding-left: 5%;
+    background: linear-gradient(135deg,yellow 15%, var(--neon-blue) 50%),
+                linear-gradient(90deg,transparent, var(--dark-blue));
+    background-blend-mode: darken;
+    width:100%;
+    color: var(--dark-blue)
 }
 
 a{
@@ -133,6 +140,9 @@ header hgroup{
     padding: 1em;
     box-shadow: 0px 0px 15px var(--halo-blue), inset 0px 0px 15px var(--halo-blue);
     transform: skew(-30deg);
+    width: fit-content;
+    background: none;
+    color: white;
 }
 
 header > hgroup > * {
@@ -154,7 +164,8 @@ header > hgroup > div{
 nav {
     position: sticky;
     top: -1px;
-    background: linear-gradient(var(--dark-blue), transparent)
+    background: linear-gradient(var(--dark-blue), transparent);
+    
 }
 
 nav > div{
@@ -162,15 +173,30 @@ nav > div{
     justify-content: space-evenly;
 }
 
+@property --first {
+    syntax: '<color>';
+    initial-value: rgba(0,0,0,0);
+    inherits: false;
+}
+  
+@property --second {
+    syntax: '<color>';
+    initial-value: rgba(0,0,0,0);
+    inherits: false;
+}
+
 nav > div > *{
     padding: 1em;
     display: flex;
     gap: 1em;
-    transition: all ease-out 0.3s;
+    background: linear-gradient(135deg,var(--first), var(--second));
+    transition: --first ease 0.5s, --second ease 0.5s;
 }
 
 nav > div > *:hover{
-    background: linear-gradient(135deg, yellow, transparent 50%);
+    --first: yellow;
+    --second: var(--neon-blue);
+    color: var(--dark-blue);
 }
 
 @media (width<740px) {
@@ -205,7 +231,12 @@ main{
 }
 
 section hgroup{
-    margin-left: 5%;
+    padding-left: 5%;
+    background: linear-gradient(135deg,yellow 15%, var(--neon-blue) 50%),
+                linear-gradient(90deg,transparent, var(--dark-blue));
+    background-blend-mode: darken;
+    width:100%;
+    color: var(--dark-blue)
 }
 
 section p{
@@ -262,8 +293,7 @@ section p{
 /* Footer */
 
 footer{
-    padding: 5%;
-    padding-top: 0;
+    padding-bottom: 2em;
 }
 
 #here{
