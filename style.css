@@ -48,6 +48,10 @@
     --halo-blue: #3c0fff;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     margin: 0;
     padding: 0;
@@ -134,8 +138,12 @@ legend{
 
 /* Header */
 
+header{
+    padding: 5em 0;
+}
+
 header hgroup{
-    margin: 5em auto;
+    margin: 0 auto;
     border: 3px solid var(--neon-blue);
     padding: 2em;
     box-shadow: 0px 0px 15px var(--halo-blue), inset 0px 0px 15px var(--halo-blue);
@@ -164,10 +172,13 @@ header > hgroup > div{
 nav {
     top: -1px;
     background: linear-gradient(var(--dark-blue), transparent);
-    
+    width: 100%;
+    z-index: 1;
 }
 
 nav > div{
+    position: relative;
+    top:0;
     display: flex;
     justify-content: space-evenly;
 }
@@ -214,9 +225,7 @@ nav > div > *:hover{
     }
 
     nav > div{
-        position: sticky;
         display: flex;
-        top:0;
         flex-direction: column;
     }
 
@@ -264,12 +273,14 @@ section p{
 
 .slideshow > fieldset{
     position: absolute;
+    opacity: 0;
     transform: translateX(200%);
     transition: transform ease 1s, opacity ease 0.5s;
 }
 
 .slideshow > fieldset.headline{
     transform: none;
+    opacity: 1;
 }
 
 .buttons{

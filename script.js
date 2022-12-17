@@ -12,6 +12,24 @@ if(window.innerWidth<740){
     }
 }
 
+const nodeNav=document.getElementsByTagName("nav")[0]
+const nodeHeader=document.getElementsByTagName("header")[0]
+window.addEventListener("scroll",event=>{
+    if (nodeHeader.getBoundingClientRect().bottom<0){
+        if(window.innerWidth<740){
+            nodeNav.children[0].style.top=nodeHeader.getBoundingClientRect().bottom*-1+"px"
+        }
+        else{
+            nodeNav.style.position="fixed"
+            nodeNav.children[0].style.top="0px"
+        }
+    }
+    else {
+        nodeNav.style.position="relative"
+        nodeNav.children[0].style.top="0px"
+    }
+})
+
 // SlideShow
 let active=[0,0];
 const nodesSlideShow=document.getElementsByClassName("slideshow");
