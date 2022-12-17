@@ -189,7 +189,7 @@ nav > div > *{
     display: flex;
     gap: 1em;
     background: linear-gradient(135deg,var(--first), var(--second));
-    transition: --first ease 0.5s, --second ease 0.5s;
+    transition: --first ease 0.5s, --second ease 0.5s, color ease 0.5s;
 }
 
 nav > div > *:hover{
