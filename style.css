@@ -54,6 +54,15 @@ body{
     width: 100vw;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+  
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
 #wrapper{
     position: relative;
     background-color: var(--dark-blue);
@@ -65,15 +74,6 @@ body{
     font-size: medium;
     overflow-x: hidden;
     width: inherit;
-}
-
-body::-webkit-scrollbar {
-    display: none;
-}
-  
-body {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
 }
 
 h1{
@@ -111,7 +111,7 @@ hgroup{
     width: fit-content;
     padding: 2em 0;
     padding-left: 5%;
-    background: linear-gradient(135deg,yellow 15%, var(--neon-blue) 50%),
+    background: linear-gradient(135deg,#ffff00 15%, var(--neon-blue) 50%),
                 linear-gradient(90deg,transparent, var(--dark-blue));
     background-blend-mode: darken;
     width:100%;
@@ -162,7 +162,6 @@ header > hgroup > div{
 /* Navbar */
 
 nav {
-    position: sticky;
     top: -1px;
     background: linear-gradient(var(--dark-blue), transparent);
     
@@ -194,7 +193,7 @@ nav > div > *{
 }
 
 nav > div > *:hover{
-    --first: yellow;
+    --first: #ffff00;
     --second: var(--neon-blue);
     color: var(--dark-blue);
 }
@@ -230,13 +229,8 @@ main{
     padding-top: 0;
 }
 
-section hgroup{
-    padding-left: 5%;
-    background: linear-gradient(135deg,yellow 15%, var(--neon-blue) 50%),
-                linear-gradient(90deg,transparent, var(--dark-blue));
-    background-blend-mode: darken;
-    width:100%;
-    color: var(--dark-blue)
+#infos > hgroup{
+    margin-top: 0;
 }
 
 section p{
@@ -294,6 +288,10 @@ section p{
 
 footer{
     padding-bottom: 2em;
+}
+
+footer > hgroup{
+    margin-top: 0;
 }
 
 #here{
