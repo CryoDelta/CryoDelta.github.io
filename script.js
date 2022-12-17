@@ -114,6 +114,19 @@ window.addEventListener("resize",event=>{
             nodesDetails[i].parentNode.childNodes[0].style.fontSize="medium";
         }
     }
+    if (nodeHeader.getBoundingClientRect().bottom<0){
+        if(window.innerWidth<740){
+            nodeNav.children[0].style.top=nodeHeader.getBoundingClientRect().bottom*-1+"px"
+        }
+        else{
+            nodeNav.style.position="fixed"
+            nodeNav.children[0].style.top="0px"
+        }
+    }
+    else {
+        nodeNav.style.position="relative"
+        nodeNav.children[0].style.top="0px"
+    }
     for (let i = 0; i < nodesSlideShow.length; i++) {
         for (let j = 0; j < nodesSlideShow[i].children.length; j++) {
             if(j>1){
