@@ -85,6 +85,10 @@ h1{
     font-size: x-large;
     margin: 0;
     padding: 0;
+    background: -webkit-linear-gradient(135deg, var(--neon-blue), #ffff00);
+    background-clip: unset;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 h2{
@@ -142,6 +146,63 @@ header{
     padding: 5em 0;
 }
 
+@keyframes neon {
+    from {
+        border: 3px solid var(--neon-blue);
+        box-shadow: 0px 0px 15px var(--halo-blue), inset 0px 0px 15px var(--halo-blue);
+    }
+
+    33%{
+        border: 3px solid var(--neon-blue);
+        box-shadow: 0px 0px 15px var(--halo-blue), inset 0px 0px 15px var(--halo-blue);
+    }
+
+    39% {
+        border: 3px solid #ffff00;
+        box-shadow: 0px 0px 15px white, inset 0px 0px 15px white;
+    }
+
+    42% {
+        border: 3px solid var(--neon-blue);
+        box-shadow: 0px 0px 15px var(--halo-blue), inset 0px 0px 15px var(--halo-blue);
+    }
+
+    48% {
+        border: 3px solid var(--neon-blue);
+        box-shadow: 0px 0px 15px var(--halo-blue), inset 0px 0px 15px var(--halo-blue);
+    }
+
+    51% {
+        border: 3px solid #ffff00;
+        box-shadow: 0px 0px 15px white, inset 0px 0px 15px white;
+    }
+
+    54% {
+        border: 3px solid var(--neon-blue);
+        box-shadow: 0px 0px 15px var(--halo-blue), inset 0px 0px 15px var(--halo-blue);
+    }
+
+    57% {
+        border: 3px solid #ffff00;
+        box-shadow: 0px 0px 15px white, inset 0px 0px 15px white;
+    }
+
+    60% {
+        border: 3px solid var(--neon-blue);
+        box-shadow: 0px 0px 15px var(--halo-blue), inset 0px 0px 15px var(--halo-blue);
+    }
+
+    69%{
+        border: 3px solid #ffff00;
+        box-shadow: 0px 0px 15px white, inset 0px 0px 15px white;
+    }
+    
+    to {
+        border: 3px solid #ffff00;
+        box-shadow: 0px 0px 15px white, inset 0px 0px 15px white;
+    }
+}
+
 header hgroup{
     margin: 0 auto;
     border: 3px solid var(--neon-blue);
@@ -151,6 +212,7 @@ header hgroup{
     width: fit-content;
     background: none;
     color: white;
+    animation: 3s infinite linear neon;
 }
 
 header > hgroup > * {
@@ -310,4 +372,18 @@ footer > hgroup{
     flex-wrap: wrap;
     justify-content: center;
     gap: 1em;
+}
+
+#here > *{
+    cursor: pointer;
+    transition: all ease-out 0.5s;
+}
+
+#here > * > legend{
+    transition: all ease-out 0.5s;
+}
+
+#here > *:hover{
+    border-color: #ffff00;
+    box-shadow: 0px 0px 15px white, inset 0px 0px 10px white;
 }

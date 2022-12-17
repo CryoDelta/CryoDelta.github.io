@@ -69,6 +69,38 @@ for (let i = 0; i < nodesButtons.length; i++) {
     })
 }
 
+// Footer
+const nodesLinks = document.getElementById("here").children;
+for (let i = 0; i < nodesLinks.length; i++) {
+    nodesLinks[i].addEventListener("mouseover",event=>{
+        nodesLinks[i].children[0].style.color="#ffff00"
+    })
+    nodesLinks[i].addEventListener("mouseout",event=>{
+        nodesLinks[i].children[0].style.color="var(--neon-blue)"
+    })
+}
+nodesLinks[0].addEventListener("click",event=>{
+    navigator.clipboard.writeText(nodesLinks[0].children[1].textContent)
+    let old=nodesLinks[0].children[1].textContent;
+    nodesLinks[0].children[1].textContent="Copied!"
+    nodesLinks[0].children[1].style.color="#ffff00"
+    setTimeout(function(){
+        nodesLinks[0].children[1].textContent=old;
+        nodesLinks[0].children[1].style.color="white"
+    },1000)
+})
+nodesLinks[3].addEventListener("click",event=>{
+    navigator.clipboard.writeText(nodesLinks[3].children[1].textContent)
+    let old=nodesLinks[3].children[1].textContent;
+    nodesLinks[3].children[1].textContent="Copied!"
+    nodesLinks[3].children[1].style.color="#ffff00"
+    setTimeout(function(){
+        nodesLinks[3].children[1].textContent=old;
+        nodesLinks[3].children[1].style.color="white"
+    },1000)
+})
+
+
 // Actualisation
 window.addEventListener("resize",event=>{
     if(window.innerWidth<740){
