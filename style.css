@@ -137,7 +137,7 @@ legend{
 header hgroup{
     margin: 5em auto;
     border: 3px solid var(--neon-blue);
-    padding: 1em;
+    padding: 2em;
     box-shadow: 0px 0px 15px var(--halo-blue), inset 0px 0px 15px var(--halo-blue);
     transform: skew(-30deg);
     width: fit-content;
@@ -258,27 +258,27 @@ section p{
 
 /* SlideShow */
 
-#slideshow{
+.slideshow{
     transition: height ease 1s;
 }
 
-#slideshow > fieldset{
+.slideshow > fieldset{
     position: absolute;
     transform: translateX(200%);
     transition: transform ease 1s, opacity ease 0.5s;
 }
 
-#slideshow > fieldset#headline{
+.slideshow > fieldset.headline{
     transform: none;
 }
 
-#buttons{
+.buttons{
     display: flex;
     justify-content: space-between;
     margin-bottom: 5px;
 }
 
-#buttons > *{
+.buttons > *{
     cursor: pointer;
     color: #ffff00;
     text-shadow: 0px 0px 15px white;
