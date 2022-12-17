@@ -16,17 +16,10 @@ const nodeNav=document.getElementsByTagName("nav")[0]
 const nodeHeader=document.getElementsByTagName("header")[0]
 window.addEventListener("scroll",event=>{
     if (nodeHeader.getBoundingClientRect().bottom<0){
-        if(window.innerWidth<740){
-            nodeNav.children[0].style.top=nodeHeader.getBoundingClientRect().bottom*-1+"px"
-        }
-        else{
-            nodeNav.style.position="fixed"
-            nodeNav.children[0].style.top="0px"
-        }
+        nodeNav.children[0].style.position="fixed";
     }
-    else {
-        nodeNav.style.position="relative"
-        nodeNav.children[0].style.top="0px"
+    else{
+        nodeNav.children[0].style.position="relative";
     }
 })
 
@@ -113,19 +106,6 @@ window.addEventListener("resize",event=>{
             nodesDetails[i].style.display="block";
             nodesDetails[i].parentNode.childNodes[0].style.fontSize="medium";
         }
-    }
-    if (nodeHeader.getBoundingClientRect().bottom<0){
-        if(window.innerWidth<740){
-            nodeNav.children[0].style.top=nodeHeader.getBoundingClientRect().bottom*-1+"px"
-        }
-        else{
-            nodeNav.style.position="fixed"
-            nodeNav.children[0].style.top="0px"
-        }
-    }
-    else {
-        nodeNav.style.position="relative"
-        nodeNav.children[0].style.top="0px"
     }
     for (let i = 0; i < nodesSlideShow.length; i++) {
         for (let j = 0; j < nodesSlideShow[i].children.length; j++) {

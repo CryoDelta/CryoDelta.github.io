@@ -232,10 +232,7 @@ header > hgroup > div{
 /* Navbar */
 
 nav {
-    top: -1px;
-    background: linear-gradient(var(--dark-blue), transparent);
     width: 100%;
-    z-index: 1;
 }
 
 nav > div{
@@ -243,6 +240,9 @@ nav > div{
     top:0;
     display: flex;
     justify-content: space-evenly;
+    background: linear-gradient(var(--dark-blue), transparent);
+    z-index: 1;
+    width: 100%;
 }
 
 @property --first {
@@ -278,17 +278,21 @@ nav > div > *:hover{
         grid-template-columns: 60px auto;
     }
 
-    header, footer{
+    header{
         grid-column: span 2;
     }
 
     nav{
-        position: relative;
+        position:relative;
+        height: fit-content;
+        grid-row: span 2
     }
 
     nav > div{
         display: flex;
         flex-direction: column;
+        width: fit-content;
+        background: none;
     }
 
 }
@@ -296,8 +300,8 @@ nav > div > *:hover{
 /* Main */
 
 main{
-    padding: 5%;
-    padding-top: 0;
+    padding-right: 5%;
+    padding-left: 2px;
 }
 
 #infos > hgroup{
@@ -306,6 +310,10 @@ main{
 
 section p{
     margin-bottom: 0;
+}
+
+section > hgroup ~ fieldset{
+    margin-left: 5%;
 }
 
 /* Card */
@@ -360,7 +368,9 @@ section p{
 /* Footer */
 
 footer{
+    padding-top: 2em;
     padding-bottom: 2em;
+    padding-left: 2px;
 }
 
 footer > hgroup{
