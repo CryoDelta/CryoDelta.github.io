@@ -22,7 +22,7 @@ window.addEventListener("scroll",event=>{
         nodeNav.children[0].style.position="relative";
     }
 })
- 
+
 // SlideShow
 let active=[0,0];
 const nodesSlideShow=document.getElementsByClassName("slideshow");
