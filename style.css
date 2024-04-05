@@ -1,0 +1,254 @@
+/** Reset **/
+*{
+    box-sizing: border-box;
+    font-family: inherit;
+    font-style: inherit;
+    font-size: 1em;
+    font-weight: inherit;
+    text-decoration: inherit;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol{
+    list-style: none;
+}
+
+/**** Layout ****/
+/** Global **/
+html{
+    scroll-behavior: smooth;
+    scroll-padding: 69px;
+}
+
+/** Header **/
+header{
+    display: flex;
+    justify-content:space-between;
+}
+
+nav>ol{
+    display: flex;
+}
+
+header>h1, nav>ol>li>a{
+    padding: 25px;
+    display: block;
+}
+
+header>h1{
+    font-size: 2em;
+    padding: 15px;
+}
+
+.hidden-mobile{
+    display: none;
+}
+
+/** Main **/
+
+section{
+    display: grid;
+}
+
+section>*{
+    grid-area: 1 / 1;
+}
+
+section>div{
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    padding-inline: 150px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    gap: 25px;
+}
+
+section>div>*{
+    max-width: 50%;
+}
+
+h2{
+    font-size: 1.7em;
+}
+
+section>div>div{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+h3{
+    font-size: 1.3em;
+}
+
+video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/** Footer **/
+footer{
+    text-align: center;
+    padding: 25px;
+}
+
+/**** Style ****/
+/** Global **/
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/** Header **/
+header{
+    background: linear-gradient(45deg, rgba(0,255,255,1) 0%, rgba(255,255,0,1) 100%);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+header {
+    font-family: "Montserrat Subrayada";
+}
+
+h1{
+    font-weight: 700;
+}
+
+nav{
+    cursor: pointer;
+    font-weight: 400;
+}
+
+nav li{
+    background: none;
+    transition: all ease-in-out .5s;
+}
+
+nav li:hover{
+    color: white;
+    backdrop-filter: invert(1);
+}
+
+/** Main **/
+h2, h3{
+    font-family: "Montserrat Subrayada";
+}
+
+h2{
+    width: min-content;
+    font-weight: 700;
+    background: -webkit-linear-gradient(45deg, rgba(0,255,255,1) 0%, rgba(255,255,0,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h3{
+    font-weight: 400;
+}
+
+#magicdle>div, #threejs>div{
+    color: white;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.75) 50%, rgba(0,0,0,0) 100%);
+}
+
+#gasc>div{
+    color: black;
+    align-items: end;
+    text-align: end;
+    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(255,255,255,0.75) 50%, rgba(255,255,255,1) 100%);
+}
+
+#gasc h2{
+    filter: invert(1);
+}
+
+/** Footer **/
+footer{
+    filter: invert(1);
+    background: linear-gradient(45deg, rgba(0,255,255,1) 0%, rgba(255,255,0,1) 100%);
+}
+
+/**** Responsive ****/
+/** Tablet **/
+@media (max-width: 1025px) {
+    section>div{
+        padding-inline: 100px;
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+
+    section>div>*{
+        max-width: 75%;
+    }
+
+    #magicdle>div, #threejs>div{
+        background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 100%);
+    }
+
+    #gasc>div{
+        background: linear-gradient(90deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,1) 100%);
+    }
+}
+
+/** Mobile **/
+@media (max-width: 426px) {
+    html{
+        scroll-padding: 130px;
+    }
+
+    header{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav, nav>ol{
+        width: 100%;
+    }
+
+    nav>ol>li{
+        flex-grow: 1;
+    }
+
+    nav a:not(.hidden-mobile) {
+        display: none;
+    }
+
+    .hidden-mobile{
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em;
+    }
+
+    section>*{
+        grid-area: initial;
+    }
+
+    section>div{
+        padding: 50px;
+    }
+
+    video{
+        display: none;
+    }
+
+    #magicdle>div, #threejs>div{
+        background: black;
+    }
+
+    #gasc>div{
+        align-items: start;
+        text-align: start;
+        background: white;
+    }
+
+    section>div>*{
+        max-width: 100%;
+    }
+}
