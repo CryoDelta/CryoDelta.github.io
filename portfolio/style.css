@@ -49,6 +49,10 @@ header>h1>a {
     margin-right: 10px;
 }
 
+nav>ol>li>a{
+    font-size: 18px;
+}
+
 .hidden-mobile{
     display: none;
 }
