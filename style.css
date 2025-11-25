@@ -56,28 +56,6 @@ em{
     text-transform: uppercase;
 }
 
-details{
-    width: 100%;
-}
-
-summary{
-    display: flex;
-    justify-content: space-between;
-    padding-inline: 0.2em;
-    padding-top: 0.1em;
-    text-align: center;
-}
-
-summary::before{
-    content: "▶";
-    transition: all 0.25s ease;
-}
-
-summary::after{
-    content: "◀";
-    transition: all 0.25s ease;
-}
-
 content{
     padding-top: 0.5em;
     padding-bottom: 0.5em;
@@ -150,17 +128,6 @@ section{
 img{
     border-radius: 100%;
     background: linear-gradient(45deg, rgba(0,255,255,1) 0%, rgba(255,255,0,1) 100%);
-    transition: all 0.5s ease;
-}
-
-div:hover>img:last-child{
-    translate: -30%;
-    rotate: -20deg;
-}
-
-div:hover>img:first-child{
-    translate: +30%;
-    rotate: 20deg;
 }
 
 em{
@@ -176,21 +143,6 @@ p{
     font-size: 0.8em;
 }
 
-summary{
-    font-family: "Strretch Sans";
-    background: linear-gradient(45deg, rgba(0,255,255,1) 0%, rgba(255,255,0,1) 100%);
-    color: #1f1f1f;
-    cursor: pointer;
-}
-
-details[open] > summary::before{
-    rotate: 90deg;
-}
-
-details[open] > summary::after{
-    rotate: -90deg;
-}
-
 content > *{
     opacity: 0;
 }
@@ -201,25 +153,6 @@ content > h3{
 
 content > p{
     translate: 100%
-}
-
-@keyframes sweep {
-    100%  {opacity: 1; translate: 0%}
-}
-
-details[open] > content > *:nth-child(1),
-details[open] > content > *:nth-child(2){
-    animation: sweep 0.75s ease 0s forwards;
-}
-
-details[open] > content > *:nth-child(3),
-details[open] > content > *:nth-child(4){
-    animation: sweep 0.75s ease 0.25s forwards;
-}
-
-details[open] > content > *:nth-child(5),
-details[open] > content > *:nth-child(6){
-    animation: sweep 0.75s ease 0.5s forwards;
 }
 
 a{
